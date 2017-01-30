@@ -1,0 +1,3 @@
+services:
+    data.generator:
+        class: VPNAdmin\ApiBundle\Utils\Generator

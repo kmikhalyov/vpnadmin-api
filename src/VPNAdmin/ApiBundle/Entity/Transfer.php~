@@ -1,0 +1,63 @@
+<?php
+
+namespace VPNAdmin\ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transfer
+ *
+ * @ORM\Table(name="transfer", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="created", columns={"created"})})
+ * @ORM\Entity
+ */
+class Transfer
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     */
+    private $userId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=false)
+     */
+    private $created;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="resource", type="string", length=255, nullable=false)
+     */
+    private $resource;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="transferred", type="bigint", nullable=false)
+     */
+    private $transferred;
+
+    /**
+     * @var \VPNAdmin\ApiBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="VPNAdmin\ApiBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+
+}

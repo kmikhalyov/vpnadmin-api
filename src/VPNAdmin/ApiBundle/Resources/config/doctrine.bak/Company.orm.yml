@@ -1,0 +1,38 @@
+VPNAdmin\ApiBundle\Entity\Company:
+    type: entity
+    table: company
+    indexes:
+        quota:
+            columns:
+                - quota
+    uniqueConstraints:
+        name:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            default: '0'
+        quota:
+            type: bigint
+            nullable: false
+            unsigned: true
+            default: '0'
+        created:
+            type: datetime
+            nullable: false
+        modified:
+            type: datetime
+            nullable: false
+    lifecycleCallbacks: {  }

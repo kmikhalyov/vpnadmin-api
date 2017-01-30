@@ -1,0 +1,139 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Transfers
+ */
+class Transfers
+{
+    /**
+     * @var \DateTime
+     */
+    private $created;
+
+    /**
+     * @var string
+     */
+    private $resource;
+
+    /**
+     * @var integer
+     */
+    private $transferred;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Users
+     */
+    private $user;
+
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Transfers
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set resource
+     *
+     * @param string $resource
+     * @return Transfers
+     */
+    public function setResource($resource)
+    {
+        $this->resource = $resource;
+
+        return $this;
+    }
+
+    /**
+     * Get resource
+     *
+     * @return string 
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * Set transferred
+     *
+     * @param integer $transferred
+     * @return Transfers
+     */
+    public function setTransferred($transferred)
+    {
+        $this->transferred = $transferred;
+
+        return $this;
+    }
+
+    /**
+     * Get transferred
+     *
+     * @return integer 
+     */
+    public function getTransferred()
+    {
+        return $this->transferred;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\Users $user
+     * @return Transfers
+     */
+    public function setUser(\AppBundle\Entity\Users $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\Users 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

@@ -1,0 +1,13 @@
+VPNAdmin\ApiBundle\Entity\Company:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 50
+        quota:
+            - NotBlank: ~
+            - Range:
+                min: 1073741824
+                max: 109951162777600
+                invalidMessage: Invalid quota

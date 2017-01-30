@@ -1,0 +1,31 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost:      12
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: $2a$12$Yim6xYIDL248ky3hDc1uxO26QjbMRW9ZOXHZMhjkDm5V6mQhFKbGa
+                        roles: ROLE_ADMIN
+
+    firewalls:
+        default:
+            pattern: ^/.*
+            http_basic: ~
+            logout:
+                path:   /logout
+                success_handler: logout_listener
+#            anonymous: ~
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html

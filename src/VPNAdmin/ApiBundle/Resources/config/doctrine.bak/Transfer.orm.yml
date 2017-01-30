@@ -1,0 +1,46 @@
+VPNAdmin\ApiBundle\Entity\Transfer:
+    type: entity
+    table: transfer
+    indexes:
+        user_id:
+            columns:
+                - user_id
+        created:
+            columns:
+                - created
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        user_id:
+            type: integer
+            nullable: false
+            unsigned: true
+        created:
+            type: datetime
+            nullable: false
+        resource:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        transferred:
+            type: bigint
+            nullable: false
+            unsigned: true
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

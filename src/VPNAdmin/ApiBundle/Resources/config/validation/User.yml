@@ -1,0 +1,10 @@
+VPNAdmin\ApiBundle\Entity\User:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 50
+        email:
+            - NotBlank: ~
+            - Email: ~

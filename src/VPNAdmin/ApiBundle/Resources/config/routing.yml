@@ -1,0 +1,15 @@
+companies:
+    type: rest
+    resource: VPNAdmin\ApiBundle\Controller\CompaniesController
+
+users:
+    type: rest
+    resource: VPNAdmin\ApiBundle\Controller\UsersController
+
+transfers:
+    type: rest
+    resource: VPNAdmin\ApiBundle\Controller\TransfersController
+
+report:
+    type: rest
+    resource: VPNAdmin\ApiBundle\Controller\ReportController

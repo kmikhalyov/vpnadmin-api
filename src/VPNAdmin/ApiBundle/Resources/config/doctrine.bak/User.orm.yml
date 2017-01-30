@@ -1,0 +1,53 @@
+VPNAdmin\ApiBundle\Entity\User:
+    type: entity
+    table: user
+    indexes:
+        FK_users_companies:
+            columns:
+                - company_id
+    uniqueConstraints:
+        email:
+            columns:
+                - email
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        company_id:
+            type: integer
+            nullable: false
+            unsigned: true
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            default: '0'
+        email:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            default: '0'
+        created:
+            type: datetime
+            nullable: false
+        modified:
+            type: datetime
+            nullable: false
+    manyToOne:
+        company:
+            targetEntity: Company
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                company_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
